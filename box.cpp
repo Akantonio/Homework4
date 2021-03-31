@@ -23,3 +23,12 @@ void box::setWidth(int x) {
 void box::setHeight(int y) {
     _width=y;
 }
+
+void FilledBox::print(std::ostream &os) {
+    for(int i=0;i<getHeight();i++){
+        for(int i=0;i<getWidth();i++) {
+            os << "x";
+        }
+        os<<"\n";
+    }
+}

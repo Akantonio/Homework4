@@ -22,7 +22,11 @@ private:
 };
 
 class FilledBox: public box {
-
+public:
+    using box::box;
+    void print(std::ostream & os);
+    std::string type();
+private:
 };
 
 class HollowBox: public box{
