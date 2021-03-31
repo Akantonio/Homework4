@@ -40,7 +40,7 @@ void FilledBox::print(std::ostream &os) {
     }
 }
 
-std::string FilledBox::type() const{
+std::string FilledBox::type() const  {
     return "Filled";
 }
 

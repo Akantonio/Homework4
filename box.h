@@ -16,7 +16,7 @@ public:
     void setWidth(int x);
     void setHeight(int y);
     virtual void print(std::ostream&os)=0;
-    virtual std::string type()=0;
+    virtual std::string type()const=0;
 private:
     int _width;
     int _height;
@@ -27,7 +27,7 @@ public:
     using box::box;
     FilledBox();
     virtual void print(std::ostream & os)override;
-    std::string type()const;
+    virtual std::string type()const override;
 private:
 };
 
