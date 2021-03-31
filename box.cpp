@@ -15,3 +15,11 @@ int box::getWidth() const {
 int box::getHeight() const {
     return _height;
 }
+
+void box::setWidth(int x) {
+    _width=x;
+}
+
+void box::setHeight(int y) {
+    _width=y;
+}
