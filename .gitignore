@@ -1,2 +1,6 @@
 # Project exclude paths
 /cmake-build-debug/
+/.idea/modules.xml
+/.idea/misc.xml
+/.idea/Homework4.iml
+/.idea/.gitignore
