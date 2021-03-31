@@ -4,6 +4,9 @@
 
 #include "box.h"
 
+box::box():_width(1),_height(1){
+
+}
 box::box(int x, int y): _width(x), _height(y) {
 
 }
@@ -24,6 +27,10 @@ void box::setHeight(int y) {
     _width=y;
 }
 
+FilledBox::FilledBox():box(1,1) {
+
+}
+
 void FilledBox::print(std::ostream &os) {
     for(int i=0;i<getHeight();i++){
         for(int i=0;i<getWidth();i++) {
@@ -32,3 +39,4 @@ void FilledBox::print(std::ostream &os) {
         os<<"\n";
     }
 }
+

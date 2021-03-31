@@ -9,6 +9,7 @@
 #include <iostream>
 class box {
 public:
+    box();
     box(int x,int y);
     int getWidth() const;
     int getHeight()const;
@@ -23,6 +24,7 @@ private:
 
 class FilledBox: public box {
 public:
+    FilledBox();
     using box::box;
     void print(std::ostream & os)override;
     std::string type();
