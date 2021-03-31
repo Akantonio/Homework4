@@ -4,6 +4,6 @@
 
 #include "box.h"
 
-box::box(int x, int y): _width(x), _length(y) {
+box::box(int x, int y): _width(x), _height(y) {
 
 }
