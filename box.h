@@ -35,10 +35,13 @@ class HollowBox: public box{
 public:
     using box::box;
     HollowBox();
+    virtual void print(std::ostream &os)override;
+    virtual std::string type()const override;
+private:
 };
 
 class CheckeredBox : public box{
-
+public:
 };
 
 #endif //HOMEWORK4_BOX_H

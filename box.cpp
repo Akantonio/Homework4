@@ -47,3 +47,26 @@ std::string FilledBox::type() const  {
 HollowBox::HollowBox():box(1,1) {
 
 }
+
+void HollowBox::print(std::ostream &os) {
+    for(int j=0;j<getHeight();j++){
+        if(j==0||(j+1)==getHeight()) {
+            for (int i = 0; i < getWidth(); i++) {
+                os << "x";
+            }
+        }else{
+            for(int i=0;i<getWidth();i++){
+                if(i==0||i==getWidth()-1){
+                    os << "x";
+                }else{
+                    os<< " ";
+                }
+            }
+        }
+        os<<"\n";
+    }
+}
+
+std::string HollowBox::type() const {
+    return "Hollow";
+}
