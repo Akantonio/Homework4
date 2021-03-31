@@ -7,8 +7,20 @@
 
 
 class box {
+public:
+private:
+};
+
+class FilledBox: public box {
 
 };
 
+class HollowBox: public box{
+
+};
+
+class CheckeredBox : public box{
+
+};
 
 #endif //HOMEWORK4_BOX_H
