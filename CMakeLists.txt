@@ -3,4 +3,4 @@ project(Homework4)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Homework4 main.cpp)
+add_executable(Homework4 main.cpp box.cpp box.h)
