@@ -11,7 +11,7 @@ public:
     box(int x,int y);
 private:
     int _width;
-    int _height;
+    int _length;
 };
 
 class FilledBox: public box {
