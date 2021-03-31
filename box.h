@@ -24,7 +24,7 @@ private:
 class FilledBox: public box {
 public:
     using box::box;
-    void print(std::ostream & os);
+    void print(std::ostream & os)override;
     std::string type();
 private:
 };
