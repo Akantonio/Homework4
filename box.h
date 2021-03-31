@@ -32,7 +32,9 @@ private:
 };
 
 class HollowBox: public box{
-
+public:
+    using box::box;
+    HollowBox();
 };
 
 class CheckeredBox : public box{

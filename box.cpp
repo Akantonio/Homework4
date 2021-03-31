@@ -44,3 +44,6 @@ std::string FilledBox::type() const  {
     return "Filled";
 }
 
+HollowBox::HollowBox():box(1,1) {
+
+}
