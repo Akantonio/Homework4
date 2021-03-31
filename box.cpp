@@ -3,3 +3,7 @@
 //
 
 #include "box.h"
+
+box::box(int x, int y) {
+
+}

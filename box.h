@@ -8,7 +8,10 @@
 
 class box {
 public:
+    box(int x,int y);
 private:
+    int _width;
+    int _height;
 };
 
 class FilledBox: public box {
