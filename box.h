@@ -24,10 +24,10 @@ private:
 
 class FilledBox: public box {
 public:
-    FilledBox();
     using box::box;
-    void print(std::ostream & os)override;
-    std::string type();
+    FilledBox();
+    virtual void print(std::ostream & os)override;
+    std::string type()const;
 private:
 };
 
