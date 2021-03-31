@@ -9,7 +9,8 @@
 class box {
 public:
     box(int x,int y);
-
+    int getWidth() const;
+    int getHeight()const;
 private:
     int _width;
     int _height;
