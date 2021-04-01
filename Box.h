@@ -50,6 +50,17 @@ public:
     virtual std::string type()const override;
 };
 
-std::unique_ptr<Box>
+std::unique_ptr<Box> boxFactory(char c,int w,int h){
+    switch (c) {
+        case 'f':
+            return std::make_unique<FilledBox>(w,h);
+        case 'h':
+            return std::make_unique<HollowBox>(w,h);
+        case 'c':
+            return std::make_unique<FilledBox>(w,h);
+        default:
+            throw std::runtime_error("Wrong parameter in boxFactory");
+    }
+}
 
 #endif //HOMEWORK4_BOX_H
