@@ -2,37 +2,37 @@
 // Created by Adrian Antonio on 3/31/2021.
 //
 
-#include "box.h"
+#include "Box.h"
 
-box::box():_width(1),_height(1){
-
-}
-box::box(int x, int y): _width(x), _height(y) {
+Box::Box(): _width(1), _height(1){
 
 }
+Box::Box(int x, int y): _width(x), _height(y) {
 
-int box::getWidth() const {
+}
+
+int Box::getWidth() const {
     return _width;
 }
 
-int box::getHeight() const {
+int Box::getHeight() const {
     return _height;
 }
 
-void box::setWidth(int x) {
+void Box::setWidth(int x) {
     _width=x;
 }
 
-void box::setHeight(int y) {
+void Box::setHeight(int y) {
     _width=y;
 }
 
-std::ostream &operator<<(std::ostream& os,const box& b) {
+std::ostream &operator<<(std::ostream& os,const Box& b) {
     b.print(os);
     return os;
 }
 
-FilledBox::FilledBox():box(1,1) {
+FilledBox::FilledBox(): Box(1, 1) {
 
 }
 
@@ -49,7 +49,7 @@ std::string FilledBox::type() const  {
     return "Filled";
 }
 
-HollowBox::HollowBox():box(1,1) {
+HollowBox::HollowBox(): Box(1, 1) {
 
 }
 

@@ -5,8 +5,8 @@
 // For Boxes3 Homework in CS 202
 
 // Includes for code to be tested
-#include "box.h"   // For class Box
-#include "box.h"   // Double inclusion test
+#include "Box.h"   // For class Box
+#include "Box.h"   // Double inclusion test
 
 // Includes for testing package & code common to all test programs
 #include <iostream>     // for std::cout, std::endl, std::cin
@@ -617,7 +617,7 @@ void test_class_Box_print(Tester & t)
     // Check print #1
     os << con1;
 
-    t.test(os.str() == "x\n", "print, default box");
+    t.test(os.str() == "x\n", "print, default Box");
 
     // Test #2 (const)
     const FilledBox con2(4,3);
@@ -625,7 +625,7 @@ void test_class_Box_print(Tester & t)
     // Check print #2
     os.str(""); //reset output holder
     os << con2;
-    t.test(os.str() == "xxxx\nxxxx\nxxxx\n", "print 4x3 box, const");
+    t.test(os.str() == "xxxx\nxxxx\nxxxx\n", "print 4x3 Box, const");
 
     // Test #3 (1x1 hollow)
     HollowBox con3(1,1);
@@ -633,7 +633,7 @@ void test_class_Box_print(Tester & t)
     // Check print #3
     os.str(""); //reset output holder
     os << con3;
-    t.test(os.str() == "x\n", "print 1x1 hollow box");
+    t.test(os.str() == "x\n", "print 1x1 hollow Box");
 
     // Test #4 (2x2 hollow)
     HollowBox con4(2,2);
@@ -641,7 +641,7 @@ void test_class_Box_print(Tester & t)
     // Check print #4
     os.str(""); //reset output holder
     os << con4;
-    t.test(os.str() == "xx\nxx\n", "print 2x2 hollow box");
+    t.test(os.str() == "xx\nxx\n", "print 2x2 hollow Box");
 
     // Test #5 (8x3 hollow)
     con4.setWidth(8);
@@ -650,7 +650,7 @@ void test_class_Box_print(Tester & t)
     // Check print #5
     os.str(""); //reset output holder
     os << con4;
-    t.test(os.str() == "xxxxxxxx\nx      x\nxxxxxxxx\n", "print 8x3 hollow box");
+    t.test(os.str() == "xxxxxxxx\nx      x\nxxxxxxxx\n", "print 8x3 hollow Box");
 
     // Test #6 (2x2 checkered)
     CheckeredBox con6(2,2);
@@ -658,7 +658,7 @@ void test_class_Box_print(Tester & t)
     // Check print #6
     os.str(""); //reset output holder
     os << con6;
-    t.test(os.str() == "x \n x\n", "print 2x2 checkered box");
+    t.test(os.str() == "x \n x\n", "print 2x2 checkered Box");
 
     // Test #7 (5x3 checkered)
     std::unique_ptr<Box> bptr = boxFactory('c',5,3);
@@ -666,14 +666,14 @@ void test_class_Box_print(Tester & t)
     // Check print #7
     os.str(""); //reset output holder
     bptr->print(os);
-    t.test(os.str() == "x x x\n x x \nx x x\n", "print 5x3 checkered box from factory");
+    t.test(os.str() == "x x x\n x x \nx x x\n", "print 5x3 checkered Box from factory");
 
     // Check pring #8
     bptr = boxFactory('h',8,3);
     // Check boxFactory hollow
     os.str(""); //reset output holder
     os << *bptr << "test";
-    t.test(os.str() == "xxxxxxxx\nx      x\nxxxxxxxx\ntest", "print 8x3 hollow box from factory using cascaded <<");
+    t.test(os.str() == "xxxxxxxx\nx      x\nxxxxxxxx\ntest", "print 8x3 hollow Box from factory using cascaded <<");
 }
 
 class dBox : public FilledBox {

@@ -7,11 +7,12 @@
 
 #include <string>
 #include <iostream>
-class box {
-    friend std::ostream & operator<<(std::ostream& os,const box & B);
+#include <memory>
+class Box {
+    friend std::ostream & operator<<(std::ostream& os,const Box & B);
 public:
-    box();
-    box(int x,int y);
+    Box();
+    Box(int x, int y);
     int getWidth() const;
     int getHeight()const;
     void setWidth(int x);
@@ -23,30 +24,32 @@ private:
     int _height;
 };
 
-class FilledBox: public box {
+class FilledBox: public Box {
 public:
-    using box::box;
+    using Box::Box;
     FilledBox();
     virtual void print(std::ostream & os)const override;
     virtual std::string type()const override;
 private:
 };
 
-class HollowBox: public box{
+class HollowBox: public Box{
 public:
-    using box::box;
+    using Box::Box;
     HollowBox();
     virtual void print(std::ostream &os)const override;
     virtual std::string type()const override;
 private:
 };
 
-class CheckeredBox : public box{
+class CheckeredBox : public Box{
 public:
-    using box::box;
+    using Box::Box;
     CheckeredBox();
     virtual void print(std::ostream &os)const override;
     virtual std::string type()const override;
 };
+
+std::unique_ptr<Box>
 
 #endif //HOMEWORK4_BOX_H
