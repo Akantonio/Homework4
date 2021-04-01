@@ -39,7 +39,7 @@ std::unique_ptr<Box> boxFactory(char c, int w, int h) {
         case 'h':
             return std::make_unique<HollowBox>(w,h);
         case 'c':
-            return std::make_unique<FilledBox>(w,h);
+            return std::make_unique<CheckeredBox>(w,h);
         default:
             throw std::runtime_error("Wrong parameter in boxFactory");
     }
@@ -89,12 +89,12 @@ std::string HollowBox::type() const {
     return "Hollow";
 }
 
-CheckeredBox::CheckeredBox() {
+CheckeredBox::CheckeredBox():Box(1,1) {
 
 }
 
 std::string CheckeredBox::type() const {
-    return std::__cxx11::string();
+    return "Checkered";
 }
 
 void CheckeredBox::print(std::ostream& os)const {
