@@ -27,11 +27,16 @@ void box::setHeight(int y) {
     _width=y;
 }
 
+std::ostream &operator<<(std::ostream& os,const box& b) {
+    b.print(os);
+    return os;
+}
+
 FilledBox::FilledBox():box(1,1) {
 
 }
 
-void FilledBox::print(std::ostream &os) {
+void FilledBox::print(std::ostream &os)const {
     for(int i=0;i<getHeight();i++){
         for(int i=0;i<getWidth();i++) {
             os << "x";
@@ -48,7 +53,7 @@ HollowBox::HollowBox():box(1,1) {
 
 }
 
-void HollowBox::print(std::ostream &os) {
+void HollowBox::print(std::ostream &os)const {
     for(int j=0;j<getHeight();j++){
         if(j==0||(j+1)==getHeight()) {
             for (int i = 0; i < getWidth(); i++) {
@@ -69,4 +74,36 @@ void HollowBox::print(std::ostream &os) {
 
 std::string HollowBox::type() const {
     return "Hollow";
+}
+
+CheckeredBox::CheckeredBox() {
+
+}
+
+std::string CheckeredBox::type() const {
+    return std::__cxx11::string();
+}
+
+void CheckeredBox::print(std::ostream& os)const {
+    for(int j=0;j<getHeight();j++){
+        if(j % 2==0) {
+            for (int i = 0; i < getWidth(); i++) {
+                if (i % 2 == 0) {
+                    os << "x";
+                } else {
+                    os << " ";
+                }
+            }
+        }else{
+            for (int i = 0; i < getWidth(); i++) {
+                if (i % 2 == 0) {
+                    os << " ";
+                } else {
+                    os << "x";
+                }
+            }
+        }
+        os<<"\n";
+    }
+
 }

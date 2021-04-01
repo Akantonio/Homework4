@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 class box {
+    friend std::ostream & operator<<(std::ostream& os,const box & B);
 public:
     box();
     box(int x,int y);
@@ -15,7 +16,7 @@ public:
     int getHeight()const;
     void setWidth(int x);
     void setHeight(int y);
-    virtual void print(std::ostream&os)=0;
+    virtual void print(std::ostream&os)const=0;
     virtual std::string type()const=0;
 private:
     int _width;
@@ -26,7 +27,7 @@ class FilledBox: public box {
 public:
     using box::box;
     FilledBox();
-    virtual void print(std::ostream & os)override;
+    virtual void print(std::ostream & os)const override;
     virtual std::string type()const override;
 private:
 };
@@ -35,13 +36,17 @@ class HollowBox: public box{
 public:
     using box::box;
     HollowBox();
-    virtual void print(std::ostream &os)override;
+    virtual void print(std::ostream &os)const override;
     virtual std::string type()const override;
 private:
 };
 
 class CheckeredBox : public box{
 public:
+    using box::box;
+    CheckeredBox();
+    virtual void print(std::ostream &os)const override;
+    virtual std::string type()const override;
 };
 
 #endif //HOMEWORK4_BOX_H
