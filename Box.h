@@ -19,6 +19,7 @@ public:
     void setHeight(int y);
     virtual void print(std::ostream&os)const=0;
     virtual std::string type()const=0;
+    virtual ~Box()=default;
 private:
     int _width;
     int _height;
