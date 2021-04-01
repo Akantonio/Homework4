@@ -51,7 +51,7 @@ FilledBox::FilledBox(): Box(1, 1) {
 
 void FilledBox::print(std::ostream &os)const {
     for(int i=0;i<getHeight();i++){
-        for(int i=0;i<getWidth();i++) {
+        for(int j=0;j<getWidth();j++) {
             os << "x";
         }
         os<<"\n";
